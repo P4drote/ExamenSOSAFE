@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">Examen SOSAFE</string>
+    <string name="pin_de_localizacion">Pin de localización</string>
+    <string name="bot_n_para_mostrar_los_aeropuertos_cercanos">Botón para mostrar los aeropuertos cercanos</string>
+    <string name="bot_n_para_volver_el_mapa_a_ubicaci_n_actual">Botón para volver el mapa a ubicación actual</string>
+    <string name="bot_n_que_muestra_los_restaurantes_cercanos">Botón que muestra los restaurantes cercanos</string>
+    <string name="aeropuerto">Aeropuerto</string>
+    <string name="restaurantes">Restaurantes</string>
+    <string name="b_ton_que_muestra_las_gasolineras_cercanas">Bóton que muestra las gasolineras cercanas</string>
+    <string name="gasolina">Gasolina</string>
+    <string name="bot_n_que_muestra_los_supermercados_cercanos">Botón que muestra los supermercados cercanos</string>
+    <string name="comestibles">Comestibles</string>
+    <string name="bot_n_que_muestra_las_cafeter_as_cercanas">Botón que muestra las cafeterías cercanas</string>
+    <string name="cafeterias">Cafeterias</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="imagen_con_el_pin_de_localizaci_n">Imagen con el pin de localización</string>
+    <string name="nofavorite">No has agregado ningún favorito</string>
+</resources>

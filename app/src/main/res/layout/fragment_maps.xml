@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="viewModel"
+            type="com.andrescermeno.examensosafe.ui.mapsFragment.MainViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.mapsFragment.MapsFragment">
+
+        <fragment
+            android:id="@+id/map"
+            android:name="com.google.android.gms.maps.SupportMapFragment"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.mancj.materialsearchbar.MaterialSearchBar
+            android:id="@+id/sv_location"
+            style="@style/MaterialSearchBarLight"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:elevation="8dp"
+            android:outlineProvider="bounds"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:mt_hint="Busque aqui"
+            app:mt_maxSuggestionsCount="5" />
+
+        <HorizontalScrollView
+            android:id="@+id/horizontalScrollView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:scrollbars="none"
+            android:textAlignment="center"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/sv_location">
+
+            <com.google.android.material.chip.ChipGroup
+                android:id="@+id/chipGroup"
+                android:clickable="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/chip_airPort"
+                    style="@style/Widget.MaterialComponents.Chip.Action"
+                    android:layout_width="110dp"
+                    android:layout_height="wrap_content"
+                    android:contentDescription="@string/bot_n_para_mostrar_los_aeropuertos_cercanos"
+                    android:padding="5dp"
+                    android:text="@string/aeropuerto"
+                    android:clickable="true"
+                    android:onClick="@{()->viewModel.clickAirPort()}"
+                    android:textColor="@android:color/black"
+                    android:textSize="12sp"
+                    android:elevation="5dp"
+                    app:chipBackgroundColor="@color/white"
+                    app:chipCornerRadius="20dp"
+                    app:chipIcon="@drawable/ic_airplane" />
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/chip_restaurant"
+                    style="@style/Widget.MaterialComponents.Chip.Action"
+                    android:layout_width="110dp"
+                    android:layout_height="wrap_content"
+                    android:contentDescription="@string/bot_n_que_muestra_los_restaurantes_cercanos"
+                    android:padding="5dp"
+                    android:elevation="5dp"
+                    android:text="@string/restaurantes"
+                    android:onClick="@{()-> viewModel.clickRestaurant()}"
+                    android:textSize="12sp"
+                    app:chipBackgroundColor="@color/white"
+                    app:chipCornerRadius="20dp"
+                    app:chipIcon="@drawable/ic_restaurant" />
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/chip_fuelStation"
+                    android:layout_width="110dp"
+                    android:layout_height="wrap_content"
+                    android:contentDescription="@string/b_ton_que_muestra_las_gasolineras_cercanas"
+                    android:padding="5dp"
+                    android:elevation="5dp"
+                    android:clickable="true"
+                    android:text="@string/gasolina"
+                    android:onClick="@{()-> viewModel.clickFuelStation()}"
+                    android:textSize="12sp"
+                    app:chipBackgroundColor="@color/white"
+                    app:chipCornerRadius="20dp"
+                    app:chipIcon="@drawable/ic_gas_station" />
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/chip_groceries"
+                    style="@style/Widget.MaterialComponents.Chip.Action"
+                    android:layout_width="110dp"
+                    android:layout_height="wrap_content"
+                    android:contentDescription="@string/bot_n_que_muestra_los_supermercados_cercanos"
+                    android:padding="5dp"
+                    android:elevation="5dp"
+                    android:text="@string/comestibles"
+                    android:onClick="@{()-> viewModel.clickGroceries()}"
+                    android:textSize="12sp"
+                    app:chipBackgroundColor="@color/white"
+                    app:chipCornerRadius="20dp"
+                    app:chipIcon="@drawable/ic_shopping" />
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/chip_coffeShop"
+                    style="@style/Widget.MaterialComponents.Chip.Action"
+                    android:layout_width="110dp"
+                    android:layout_height="wrap_content"
+                    android:contentDescription="@string/bot_n_que_muestra_las_cafeter_as_cercanas"
+                    android:padding="5dp"
+                    android:elevation="5dp"
+                    android:text="@string/cafeterias"
+                    android:onClick="@{()-> viewModel.clickCoffeeShop()}"
+                    android:textSize="12sp"
+                    app:chipBackgroundColor="@color/white"
+                    app:chipCornerRadius="20dp"
+                    app:chipIcon="@drawable/ic_cafe" />
+
+            </com.google.android.material.chip.ChipGroup>
+
+        </HorizontalScrollView>
+
+        <ImageButton
+            android:id="@+id/ib_myLocation"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:contentDescription="@string/bot_n_para_volver_el_mapa_a_ubicaci_n_actual"
+            android:src="@drawable/ic_my_location"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/horizontalScrollView" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
